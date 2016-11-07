@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+{% include head.html %}
+
+<body>
+
+  {% include header.html %}
+
+  {% for p in site.data.pages %}
+    {% if p.title == page.title %}
+      {% assign category_style = p.style %}
+    {% endif %}
+  {% endfor %}
+  <section id="banner" class="style{{ category_style }}">
+  	<div class="inner">
+  		<span class="image">
+  			<img src="{{ site.baseurl }}/{{ page.image }}" alt="" />
+  		</span>
+  		<header class="major">
+  			<h1>{{ page.title }}</h1>
+  		</header>
+  		<div class="content">
+  			<p>{{ page.description }}</p>
+  		</div>
+  	</div>
+  </section>
+
+  {{ content }}
+
+  {% include footer.html %}
+
+</body>
+
+</html>

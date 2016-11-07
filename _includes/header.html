@@ -1,0 +1,33 @@
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header"
+  {% if page.layout == "home" %} class="alt"
+  {% else %} class="alt style2"
+  {% endif %}>
+
+	<a href="{{ site.url }}{{ site.baseurl }}" class="logo">
+    <strong>{{ site.title-bold }}</strong>
+    <span>{{ site.title-normal }}</span>
+  </a>
+
+  <nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+	<ul class="links">
+    <li><a href="{{ site.url }}">Home</a></li>
+
+		{% for page in site.data.pages %}
+      <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+		{% endfor %}
+	</ul>
+
+	<ul class="actions vertical">
+		<li><a href="{{ site.url}}/contact" class="button fit">Contact</a></li>
+	</ul>
+</nav>

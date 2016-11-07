@@ -1,0 +1,14 @@
+- title: Blog
+  category: blog
+  style: 6
+  url: /blog
+
+- title: Elixir
+  category: elixir
+  style: 2
+  url: /elixir
+
+- title: Ruby
+  category: ruby
+  style: 3
+  url: /ruby

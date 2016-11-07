@@ -1,0 +1,27 @@
+---
+layout: home
+title: Home
+landing-title: Hi, my name is Ricardo
+description: This is my personal website, get to know me!
+---
+
+<!-- Banner -->
+<section id="banner" class="major">
+	<div class="inner">
+		<header class="major">
+			<h1>{{ page.landing-title }}</h1>
+		</header>
+		<div class="content">
+			<p style="text-transform: uppercase;">{{ page.description }}</p>
+			<ul class="actions">
+				<li><a href="/blog" class="button next scrolly">Blog</a></li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- Main -->
+<div id="main">
+  {% include profile.html %}
+  {% include tiles.html %}
+</div>

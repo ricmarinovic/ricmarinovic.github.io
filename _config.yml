@@ -1,0 +1,46 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title-bold: rkma
+title-normal: Ricardo Marinovic
+description: My personal website and blog.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://rkma.github.io" # the base hostname & protocol for your site
+author: rkma05
+cat: Elixir Ruby
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jemoji
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+
+# Social settings
+github_url: https://github.com/rkma
+gitlab_url: https://gitlab.com/rkma
+linkedin_url: https://linkedin.com/in/marinovic-ricardo
+twitter_url: https://twitter.com/rkma05
+codeschool_url: https://www.codeschool.com/users/rkma
+
+# Plugin: jekyll-seo-tag
+twitter:
+  username: rkma05

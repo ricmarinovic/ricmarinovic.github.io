@@ -1,0 +1,24 @@
+---
+layout: category
+title: Elixir
+description: About elixir
+image: assets/images/elixir.jpg
+---
+<div id="main" class="alt">
+  <div class="inner">
+    <section id="one" class="tiles post">
+      {% for post in site.categories.elixir %}
+      <article class="{{ post.categories[0] }}">
+        <span class="image">
+          <img src="{{ site.baseurl }}/{{ post.image }}" alt="" />
+        </span>
+
+        <header class="major">
+          <h3><a href="{{ site.baseurl }}{{ post.url }}" class="link">{{ post.title }}</a></h3>
+          <p>{{ post.description }}</p>
+        </header>
+      </article>
+      {% endfor %}
+    </section>
+  </div>
+</div>
