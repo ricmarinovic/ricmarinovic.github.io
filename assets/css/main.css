@@ -2815,7 +2815,10 @@
 			}
 
       /* Posts */
-      .tiles.post article { width: 50%; }
+      .tiles.post article {
+        width: 50%;
+        border: 1px solid transparent;
+      }
 
       .tiles.post article.blog:before {
         background-color: #83ce4d;
@@ -3856,6 +3859,10 @@
 					#menu ul.links > li:first-child > a:not(.button) {
 						border-top: 0 !important;
 					}
+
+          #menu ul.links .icon:before {
+            margin-right: 0.5em;
+          }
 
 		#menu .close {
 			-moz-transition: color 0.2s ease-in-out;

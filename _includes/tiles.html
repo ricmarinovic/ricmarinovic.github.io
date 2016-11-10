@@ -1,22 +1,21 @@
 <section id="categories" class="tiles">
   {% for p1 in site.data.pages %}
-    {% if site.cat contains p1.title %}
+    {% if p1.title != "Blog" %}
       {% for p2 in site.pages %}
         {% if p1.title == p2.title %}
           {% assign page = p2 %}
+          <article>
+            <span class="image">
+              <img src="{{ page.image }}" />
+            </span>
+
+            <header class="major">
+              <h3><a href="{{ site.baseurl }}{{ page.url }}" class="link">{{ page.title }}</a></h3>
+              <p>{{ page.description }}</p>
+            </header>
+          </article>
         {% endif %}
       {% endfor %}
-
-      <article>
-        <span class="image">
-          <img src="{{ page.image }}" />
-        </span>
-
-        <header class="major">
-          <h3><a href="{{ site.baseurl }}{{ page.url }}" class="link">{{ page.title }}</a></h3>
-          <p>{{ page.description }}</p>
-        </header>
-      </article>
     {% endif %}
   {% endfor %}
 </section>

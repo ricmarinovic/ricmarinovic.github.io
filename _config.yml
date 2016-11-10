@@ -19,7 +19,6 @@ description: My personal website and blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rkma.github.io" # the base hostname & protocol for your site
 author: rkma05
-cat: Elixir Ruby
 
 # Build settings
 markdown: kramdown
