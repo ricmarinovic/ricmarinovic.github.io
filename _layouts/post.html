@@ -8,9 +8,12 @@
 
     {% include header.html %}
 
-    {% for p in site.data.pages %}
-      {% if p.category == page.categories[0] %}
-        {% assign category_style = p.style %}
+    {% for pg in site.pages %}
+      {% if pg.category == page.categories[0] %}
+        {% assign category_style = pg.style %}
+        {% break %}
+      {% else %}
+        {% assign category_style = 1 %}
       {% endif %}
     {% endfor %}
     <section id="banner" class="style{{ category_style }}">
@@ -43,8 +46,8 @@
     	</div>
     </section>
 
-    <div id="main" class="alt">
-      <section id="one">
+    <div id="main">
+      <section id="post">
         <div class="inner post">
           {{ content }}
         </div>

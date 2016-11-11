@@ -1,17 +1,5 @@
 - title: Blog
-  category: blog
-  style: 6
-  url: /blog
-  icon: book
 
 - title: Elixir
-  category: elixir
-  style: 2
-  url: /elixir
-  icon: tint
 
 - title: Ruby
-  category: ruby
-  style: 3
-  url: /ruby
-  icon: diamond

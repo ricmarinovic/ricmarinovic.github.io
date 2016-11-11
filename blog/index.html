@@ -1,37 +1,34 @@
 ---
 layout: category
 title: Blog
+category: blog
 description: About many things
 image: assets/images/blog.jpg
+icon: book
+style: 6
 ---
-<div id="main" class="alt">
-  <div class="inner">
-    <section id="one" class="tiles post">
-      {% for post in site.posts %}
-      <article class="{{ post.categories[0] }}">
-        <span class="image">
-          <img src="{{ site.baseurl }}/{{ post.image }}" alt="" />
-        </span>
+{% for post in site.posts %}
+  <article class="{{ post.categories[0] }}">
+    <span class="image">
+      <img src="{{ site.baseurl }}/{{ post.image }}" alt="" />
+    </span>
 
-        <header class="major">
-          <h3><a href="{{ site.baseurl }}{{ post.url }}" class="link">{{ post.title }}</a></h3>
+    <header class="major">
+      <h3><a href="{{ site.baseurl }}{{ post.url }}" class="link">{{ post.title }}</a></h3>
 
-          <p class="description">{{ post.description }}</p>
+      <p class="description">{{ post.description }}</p>
 
-          <p class="icon fa-calendar">
-            {{ post.date | date: '%B %d, %Y' }}
-          </p>
+      <p class="icon fa-calendar">
+        {{ post.date | date: '%B %d, %Y' }}
+      </p>
 
-          {% if post.tags != blank %}
-            <p class="icon fa-tags">
-              {% for tag in post.tags %}
-                {{ tag }}
-              {% endfor %}
-            </p>
-          {% endif %}
-        </header>
-      </article>
-      {% endfor %}
-    </section>
-  </div>
-</div>
+      {% if post.tags != blank %}
+        <p class="icon fa-tags">
+          {% for tag in post.tags %}
+            {{ tag }}
+          {% endfor %}
+        </p>
+      {% endif %}
+    </header>
+  </article>
+{% endfor %}

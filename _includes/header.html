@@ -19,12 +19,17 @@
 
 <!-- Menu -->
 <nav id="menu">
-	<ul class="links">
+  <ul class="links">
     <li><a href="{{ site.url }}" class="icon fa-home">Home</a></li>
 
-		{% for page in site.data.pages %}
-      <li><a href="{{ site.baseurl }}{{ page.url }}" class="icon fa-{{ page.icon }}">{{ page.title }}</a></li>
-		{% endfor %}
+    {% for p in site.data.pages %}
+      {% for pg in site.pages %}
+        {% if p.title == pg.title %}
+          <li><a href="{{ site.baseurl }}{{ pg.url }}" class="icon fa-{{ pg.icon }}">{{ pg.title }}</a></li>
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
 	</ul>
 
 	<ul class="actions vertical">
