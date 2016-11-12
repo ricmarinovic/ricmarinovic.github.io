@@ -2817,11 +2817,11 @@
       /* Posts */
       .tiles.post article {
         width: 50%;
-        border: 1px solid transparent;
+        border: 1px solid #2a2f4a;
       }
 
       .tiles.post article.blog:before {
-        background-color: #83ce4d;
+        background-color: #6fc3df;
       }
       .tiles.post article.elixir:before {
         background-color: #8ea9e8;
@@ -3588,7 +3588,7 @@
 			}
 
       .inner.post {
-        max-width: 820px !important;
+        max-width: 800px !important;
       }
 
 				@media screen and (max-width: 736px) {

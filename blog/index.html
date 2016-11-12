@@ -5,10 +5,15 @@ category: blog
 description: About many things
 image: assets/images/blog.jpg
 icon: book
-style: 6
+style: 1
 ---
 {% for post in site.posts %}
-  <article class="{{ post.categories[0] }}">
+  <article
+  {% if post.categories[0] != blank %}
+    class="{{ post.categories[0] }}"
+  {% else %}
+    class="blog"
+  {% endif %}>
     <span class="image">
       <img src="{{ site.baseurl }}/{{ post.image }}" alt="" />
     </span>

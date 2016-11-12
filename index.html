@@ -1,18 +1,21 @@
 ---
 layout: home
 title: Home
+description: Ricardo Marinovic's personal website and blog.
 landing-title: Hi, my name is Ricardo
-description: This is my personal website, get to know me!
 ---
-
-<!-- Banner -->
 <section id="banner" class="major">
 	<div class="inner">
 		<header class="major">
 			<h1>{{ page.landing-title }}</h1>
 		</header>
+
 		<div class="content">
-			<p style="text-transform: uppercase;">{{ page.description }}</p>
+      <p>
+        I love programming, playing the violin and watching motor sports.<br>
+        Here you can find things I find interesting and what I am up to.
+      </p>
+
 			<ul class="actions">
 				<li><a href="/blog" class="button next scrolly">Blog</a></li>
 			</ul>
@@ -23,6 +26,6 @@ description: This is my personal website, get to know me!
 <!-- Main -->
 <div id="main">
   {% include profile.html %}
-  
+
   {% include tiles.html %}
 </div>

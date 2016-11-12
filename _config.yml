@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title-bold: rkma
 title-normal: Ricardo Marinovic
-description: My personal website and blog.
+description: Ricardo Marinovic's personal website and blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rkma.github.io" # the base hostname & protocol for your site
 author: rkma05
