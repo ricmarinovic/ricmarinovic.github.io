@@ -9,22 +9,5 @@ style: 3
 published: false
 ---
 {% for post in site.categories.ruby %}
-  <article class="{{ post.categories[0] }}">
-    <span class="image">
-      <img src="{{ site.baseurl }}/{{ post.image }}" alt="" />
-    </span>
-
-    <header class="major">
-      <h3><a href="{{ site.baseurl }}{{ post.url }}" class="link">{{ post.title }}</a></h3>
-      <p class="description">{{ post.description }}</p>
-
-      {% if post.tags != blank %}
-        <p class="icon fa-tags">
-          {% for tag in post.tags %}
-            {{ tag }}
-          {% endfor %}
-        </p>
-      {% endif %}
-    </header>
-  </article>
+  {% include categories.html %}
 {% endfor %}

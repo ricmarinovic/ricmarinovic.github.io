@@ -3,7 +3,7 @@
     {% if p.title != "Blog" %}
       {% for pg in site.pages %}
         {% if p.title == pg.title %}
-          <article>
+          <article class="{{ pg.category }}">
             <span class="image">
               <img src="{{ pg.image }}" />
             </span>
