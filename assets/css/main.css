@@ -2820,13 +2820,16 @@
         border: 1px solid #2a2f4a;
       }
 
-      .tiles.post article.blog:before {
+      .tiles article.blog:before {
         background-color: #6fc3df;
       }
-      .tiles.post article.elixir:before {
+      .tiles article.elixir:before {
         background-color: #8ea9e8;
       }
-      .tiles.post article.ruby:before {
+      .tiles article.rust:before {
+        background-color: #b1e969;
+      }
+      .tiles article.ruby:before {
         background-color: #ff615a;
       }
 
