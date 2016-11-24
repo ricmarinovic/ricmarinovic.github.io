@@ -1,8 +1,8 @@
-.highlight { color: #dedacf; }
-.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight     { color: #dedacf; }
+.highlight .c  { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a5c7ff; } /* Error */
-.highlight .k { color: #ffffff } /* Keyword */
-.highlight .o { color: #ebd99c } /* Operator */
+.highlight .k  { color: #ffffff } /* Keyword */
+.highlight .o  { color: #ebd99c } /* Operator */
 .highlight .cm { color: #828997; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #828997 } /* Comment.Preproc */
 .highlight .c1 { color: #828997; font-style: italic } /* Comment.Single */
@@ -21,11 +21,11 @@
 .highlight .gt { color: #ff615a } /* Generic.Traceback */
 .highlight .kn { color: #f58c80 } /* Keyword.Declaration */
 .highlight .kt { color: #445588 } /* Keyword.Type */
-.highlight .m { color: #e5c07b } /* Literal.Number */
-.highlight .s { color: #83ce4d } /* Literal.String */
-.highlight .n { color: #a5c7ff }
+.highlight .m  { color: #e5c07b } /* Literal.Number */
+.highlight .s  { color: #83ce4d } /* Literal.String */
+.highlight .n  { color: #a5c7ff }
 .highlight .na { color: #008080 } /* Name.Attribute */
-.highlight .nb { color: #dedacf } /* Name.Builtin */
+.highlight .nb { color: #e5c07b } /* Name.Builtin */
 .highlight .nc { color: #e86aff } /* Name.Class */
 .highlight .no { color: #e86aff } /* Name.Constant */
 .highlight .ni { color: #800080 } /* Name.Entity */
@@ -34,11 +34,12 @@
 .highlight .nn { color: #555555 } /* Name.Namespace */
 .highlight .nt { color: #000080 } /* Name.Tag */
 .highlight .nv { color: #5da9f6 } /* Name.Variable */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .w  { color: #bbbbbb } /* Text.Whitespace */
 .highlight .mf { color: #e5c07b } /* Literal.Number.Float */
 .highlight .mh { color: #e5c07b } /* Literal.Number.Hex */
 .highlight .mi { color: #e5c07b } /* Literal.Number.Integer */
 .highlight .mo { color: #e5c07b } /* Literal.Number.Oct */
+.highlight .p  { color: #ebd99c }
 .highlight .sb { color: #83ce4d } /* Literal.String.Backtick */
 .highlight .sc { color: #83ce4d } /* Literal.String.Char */
 .highlight .sd { color: #83ce4d } /* Literal.String.Doc */
