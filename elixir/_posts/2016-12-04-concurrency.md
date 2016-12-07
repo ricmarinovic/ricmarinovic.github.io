@@ -9,7 +9,7 @@ comments: true
 ---
 ## Processes
 
-Elixir uses de Actor model of concurrency. Each actor is an independent process performing a specific task, communicating through sending and receiving messages. Processes do not share any information with other processes and are specific about what messages they will act on.
+Elixir uses the Actor model of concurrency. Each actor is an independent process performing a specific task, communicating through sending and receiving messages. Processes do not share any information with other processes and are specific about what messages they will act on.
 
 ### Creating processes
 
