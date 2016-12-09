@@ -1,0 +1,305 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Processes · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tasks.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+        <style media="screen">
+        @import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+          code, pre, pre code {
+            font-family: "Fira Code", "Fira Mono", "Courier New", monospace !important;
+          }
+          pre code {
+            font-size: 0.95em !important;
+          }
+        </style>
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="processes.html">
+            
+                <a href="processes.html">
+            
+                    
+                    Processes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="tasks.html">
+            
+                <a href="tasks.html">
+            
+                    
+                    Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="agents.html">
+            
+                <a href="agents.html">
+            
+                    
+                    Agents
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+    <li>
+       <a href="../">
+         <i class="fa fa-chevron-left" style="margin-right: 3px"></i>
+           Back
+       </a>
+   </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Processes</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="processes">Processes</h1>
+<p>Elixir uses the Actor model of concurrency. Each actor is an independent process performing a specific task, communicating through sending and receiving messages. Processes do not share any information with other processes and are specific about what messages they will act on.</p>
+<h2 id="creating-processes">Creating processes</h2>
+<p>A new process is created using the Kernel functions <code>spawn</code>, <code>spawn_link</code> and <code>spawn_monitor</code>. The <code>Kernel.self/0</code> function will return the pid of the current process.</p>
+<h2 id="exchanging-messages">Exchanging messages</h2>
+<p>Messages are sent using the Kernel function <code>send/2</code> and received with the Kernel.SpecialForms function <code>receive/1</code>. When a message is sent to a process, the message is stored in the process mailbox.</p>
+<pre><code class="lang-elixir">send(pid, {<span class="hljs-symbol">:ok</span>, <span class="hljs-string">&quot;My message&quot;</span>})
+</code></pre>
+<pre><code class="lang-elixir">receive <span class="hljs-keyword">do</span>
+  {<span class="hljs-symbol">:ok</span>, message} -&gt; IO.puts message
+after <span class="hljs-number">1_000</span> -&gt;
+  IO.puts <span class="hljs-string">&quot;No message.&quot;</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="naming-processes">Naming processes</h2>
+<ul>
+<li><code>Process.register(pid, name)</code> registers the atom name with the given pid.</li>
+<li><code>Process.whereis(name)</code> returns the pid of the registered process.</li>
+</ul>
+<p>A <code>:name</code> option can be passed to Agents and GenServers <code>start_link</code>.</p>
+<p>To register a name globally and across <a href="#nodes">nodes</a>, use:</p>
+<ul>
+<li><code>:global.register_name(name, pid)</code></li>
+<li><code>:global.whereis_name(name)</code></li>
+</ul>
+<h1 id="nodes">Nodes</h1>
+<p>Starting a new node with <code>iex --sname foo</code>, giving <code>foo@bar</code>.</p>
+<ul>
+<li><code>Node.self</code> returns the name of the current node.</li>
+<li><code>Node.list</code> shows a list of currently connected nodes.</li>
+<li><code>Node.connect</code> connects to another node.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Concurrency">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tasks.html" class="navigation navigation-next " aria-label="Next page: Tasks">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Processes","level":"1.2","depth":1,"next":{"title":"Tasks","level":"1.3","depth":1,"path":"tasks.md","ref":"tasks.md","articles":[]},"previous":{"title":"Concurrency","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","structure.readme":"variables.md","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"processes.md","mtime":"2016-12-09T03:14:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-09T04:26:16.798Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

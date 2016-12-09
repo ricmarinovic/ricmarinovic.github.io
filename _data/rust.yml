@@ -1,0 +1,6 @@
+- title: Syntax
+  description: Diving in to learn the basics of the Rust language
+  categories: rust
+  tags: basics
+  image: assets/images/posts/diving-in.png
+  url: basics/variables.html

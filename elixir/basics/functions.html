@@ -1,0 +1,427 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Functions · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="modules.html" />
+    
+    
+    <link rel="prev" href="control-flow.html" />
+    
+
+        <style media="screen">
+        @import url('https://fonts.googleapis.com/css?family=Fira+Mono');
+          code, pre, pre code {
+            font-family: "Fira Code", "Fira Mono", "Courier New", monospace !important;
+          }
+          pre code {
+            font-size: 0.95em !important;
+          }
+        </style>
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Syntax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Basics</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="variables.html">
+            
+                <a href="variables.html">
+            
+                    
+                    Variables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="types.html">
+            
+                <a href="types.html">
+            
+                    
+                    Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    Operators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="control-flow.html">
+            
+                <a href="control-flow.html">
+            
+                    
+                    Control flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="functions.html">
+            
+                <a href="functions.html">
+            
+                    
+                    Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="protocols.html">
+            
+                <a href="protocols.html">
+            
+                    
+                    Protocols
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="behaviours.html">
+            
+                <a href="behaviours.html">
+            
+                    
+                    Behaviours
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="errors.html">
+            
+                <a href="errors.html">
+            
+                    
+                    Errors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Advanced</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="macros.html">
+            
+                <a href="macros.html">
+            
+                    
+                    Macros
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+    <li>
+       <a href="../">
+         <i class="fa fa-chevron-left" style="margin-right: 3px"></i>
+           Back
+       </a>
+   </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Functions</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="functions">Functions</h1>
+<p>Functions can be defined with <code>def/2</code> and private functions with <code>defp/2</code>. Private functions can only be called within the module it is defined. Functions are also a type. Arity is the number of parameters of a given function: <code>Enum.map/2</code>.</p>
+<p>The <code>&amp;</code> operator can be used to capture functions, passing <code>&amp;Module.function/arity</code> or using <code>&amp;1</code>, <code>&amp;2</code>, etc. as placholders for parameters. More on this <a href="https://hexdocs.pm/elixir/Kernel.SpecialForms.html#&amp;/1" target="_blank">here</a>.</p>
+<p>Named functions must be defined inside modules. Defining default values for arguments is possible by adding <code>\\ default</code> after the argument on the function definition. It is also possible to use <a href="#guard-clauses">guard clauses</a> with <code>when</code> to refine the match on functions.</p>
+<pre><code class="lang-elixir"><span class="hljs-comment"># Anonymous function (lambdas)</span>
+square = <span class="hljs-keyword">fn</span> (x) -&gt; x*x <span class="hljs-keyword">end</span>
+<span class="hljs-comment"># Using the &amp; operator</span>
+square = &amp;(&amp;<span class="hljs-number">1</span>*&amp;<span class="hljs-number">1</span>)
+
+square.(<span class="hljs-number">2</span>) <span class="hljs-comment">#=&gt; 4</span>
+
+<span class="hljs-comment"># Named function</span>
+<span class="hljs-class"><span class="hljs-keyword">defmodule</span> <span class="hljs-title">Math</span></span> <span class="hljs-keyword">do</span>
+  <span class="hljs-comment"># Inline definition</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">square</span></span>(x), <span class="hljs-symbol">do:</span> x*x
+
+  <span class="hljs-comment"># with do/end blocks (syntactic sugar)</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">multiply</span></span>(x, y) <span class="hljs-keyword">do</span>
+    x * y
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment"># use \\ to default arguments</span>
+  <span class="hljs-comment"># the following example is using a guard clause</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">divide</span></span>(x, y \\ <span class="hljs-number">2</span>) <span class="hljs-keyword">when</span> y != <span class="hljs-number">0</span> <span class="hljs-keyword">do</span>
+    x / y
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h2 id="guard-clauses">Guard clauses</h2>
+<p>Reference for all allowed guard clauses can be found <a href="https://hexdocs.pm/elixir/guards" target="_blank">here</a>.</p>
+<p>Guard clauses can also be used in <a href="control-flow.html#case">case</a> expressions.</p>
+<pre><code class="lang-elixir"># List of allowed guard clauses
+
+=== !== == != &gt; &gt;= &lt; &lt;= # Comparison operators
+and or not              # Strict boolean operators
++ - * /                 # Arithmetic operators
+&lt;&gt;                      # Binary concatenation
+in                      # Membership operator
+
+# The following &quot;type-check&quot; functions defined in the Kernel module
+is_atom/1, is_binary/1, is_bitstring/1, is_boolean/1, is_float/1,
+is_function/1, is_function/2, is_integer/1, is_list/1, is_map/1,
+is_nil/1, is_number/1, is_pid/1, is_port/1, is_reference/1, is_tuple/1
+
+# The following &quot;safe&quot; functions defined in the Kernel Module
+abs/1, binary_part/3, bit_size/1, byte_size/1, div/2, elem/2,
+hd/1, length/1, map_size/1, node/0, node/1, rem/2, round/1,
+self/0, tl/1, trunc/1, tuple_size/1
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="control-flow.html" class="navigation navigation-prev " aria-label="Previous page: Control flow">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="modules.html" class="navigation navigation-next " aria-label="Next page: Modules">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Functions","level":"2.5","depth":1,"next":{"title":"Modules","level":"2.6","depth":1,"path":"modules.md","ref":"modules.md","articles":[]},"previous":{"title":"Control flow","level":"2.4","depth":1,"path":"control-flow.md","ref":"control-flow.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontsettings":{"theme":"night","family":"sans","size":2},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","structure.readme":"variables.md","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"functions.md","mtime":"2016-12-09T00:55:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2016-12-09T04:25:55.242Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,13 @@
+- title: Syntax
+  description: A quick reference for the basics of the Elixir language
+  categories: elixir
+  tags: basics
+  image: assets/images/posts/potions-book.jpg
+  url: basics/variables.html
+
+- title: Concurrency
+  description: Unleashing the full potential of concurrent programs
+  categories: elixir
+  tags: basics
+  image: assets/images/posts/strange-circles.jpg
+  url: concurrency/processes.html
