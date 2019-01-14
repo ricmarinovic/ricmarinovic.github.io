@@ -13,12 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title-bold: rkma
+title-bold: ricmarinovic
 title-normal: Ricardo Marinovic
 description: Ricardo Marinovic's personal website and blog.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://rkma.github.io" # the base hostname & protocol for your site
-author: rkma05
+url: "https://ricmarinovic.github.io" # the base hostname & protocol for your site
+author: ricmarinovic
 
 # Build settings
 markdown: kramdown
@@ -34,13 +34,12 @@ exclude:
   - README.md
 
 # Social settings
-github_url: https://github.com/rkma
-gitlab_url: https://gitlab.com/rkma
-linkedin_url: https://linkedin.com/in/marinovic-ricardo
-twitter_url: https://twitter.com/rkma05
-codeschool_url: https://www.codeschool.com/users/rkma
+github_url: https://github.com/ricmarinovic
+gitlab_url: https://gitlab.com/ricmarinovic
+linkedin_url: https://linkedin.com/in/ricmarinovic
+twitter_url: https://twitter.com/ricmarinovic
 stack_overflow_url: https://stackoverflow.com/users/7186812/ricardo-marinovic
 
 # Plugin: jekyll-seo-tag
 twitter:
-  username: rkma05
+  username: ricmarinovic
