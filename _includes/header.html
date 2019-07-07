@@ -1,38 +1,32 @@
-<!-- Wrapper -->
-<div id="wrapper">
+<header class="header">
 
-<!-- Header -->
-<header id="header"
-  {% if page.layout == "home" %} class="alt"
-  {% else %} class="alt style2"
-  {% endif %}>
+	<div class="wrap">
 
-	<a href="{{ site.url }}{{ site.baseurl }}" class="logo">
-    <strong>{{ site.title-bold }}</strong>
-    <span>{{ site.title-normal }}</span>
-  </a>
+		{% if site.data.settings.header_settings.logo_image %}
+		<a href="/" class="header__logo">
+			<img src="{{ site.data.settings.header_settings.logo_image }}" class="header__logo__img">
+		</a>
+		{% else %}
+		<a href="/" class="header__title">
+			{{ site.data.settings.basic_settings.site_title }}
+		</a>
+		{% endif %}
 
-  <nav>
-		<a href="#menu">Menu</a>
-	</nav>
+		<div class="menu">
+			<div class="menu__toggle js-menu-toggle">
+				<div class="menu__toggle__icon"><span></span></div>
+			</div>
+			<div class="menu__wrap">
+				<ul class="menu__list">
+					{% for item in site.data.settings.menu_settings.menu_items %}
+					<li class="menu__list__item">
+						<a href="{{ item.url }}" class="menu__list__item__link">{{ item.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
 </header>
-
-<!-- Menu -->
-<nav id="menu">
-  <ul class="links">
-    <li><a href="{{ site.url }}" class="icon fa-home">Home</a></li>
-
-    {% for p in site.data.pages %}
-      {% for pg in site.pages %}
-        {% if p.title == pg.title %}
-          <li><a href="{{ site.baseurl }}{{ pg.url }}" class="icon fa-{{ pg.icon }}">{{ pg.title }}</a></li>
-          {% break %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-	</ul>
-
-	<ul class="actions vertical">
-		<li><a href="{{ site.url}}/contact" class="button fit icon fa-envelope">Contact</a></li>
-	</ul>
-</nav>

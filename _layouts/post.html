@@ -1,61 +1,32 @@
-<!DOCTYPE html>
+---
+layout: default
+---
 
-<html>
+<section class="hero hero--single">
 
-{% include head.html %}
+	<div class="hero__image" style="background-image: url({{ page.featured_image }})">
+		<div class="hero__overlay"></div>
+	</div>
 
-<body>
+	<div class="wrap">
 
-  {% include header.html %}
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.date | date_to_long_string }}</p>
 
-  {% for pg in site.pages %}
-  {% if pg.category == page.categories[0] and page.categories[0] != blank %}
-  {% assign category_style = pg.style %}
-  {% break %}
-  {% else %}
-  {% assign category_style = 1 %}
-  {% endif %}
-  {% endfor %}
-  <section id="banner" class="style{{ category_style }}">
-    <div class="inner post">
-      <span class="image">
-        <img src="{{ site.baseurl }}/{{ page.image }}" alt="" />
-      </span>
-      <header class="major">
-        <h1>{{ page.title }}</h1>
-      </header>
-      <div class="content">
-        <p>{{ page.description }}</p>
-      </div>
-      <div class="content">
-        {% if page.categories contains "blog" %}
-        <p class="icon fa-calendar">
-          {{ page.date | date: '%B %d, %Y' }}
-        </p>
-        {% endif %}
+	</div>
 
-        {% if page.tags != blank %}
-        <p class="icon fa-tags">
-          {% for tag in page.tags %}
-          {{ tag }}
-          {% endfor %}
-        </p>
-        {% endif %}
-        </header>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <div id="main">
-    <section id="post">
-      <div class="inner post">
-        {{ content }}
-      </div>
-    </section>
-  </div>
+<section class="single">
 
-  {% include footer.html %}
+	<div class="wrap">
 
-</body>
+		<article class="single-post">
 
-</html>
+			{{ page.content }}
+
+		</article>
+
+	</div>
+
+</section>
