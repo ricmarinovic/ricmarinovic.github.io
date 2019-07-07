@@ -27,7 +27,7 @@ post_settings:
   grid_spacing: 10
 
 contact_settings:
-  form_action: "https://formspree.io/marinovic.ricardo@gmail.com"
+  form_action: "https://formspree.io/ricardo@marinovic.dev"
   confirmation_url: "/thanks"
   email_subject: "Contact from Website"
   send_button_text: "Send Message"
