@@ -12,6 +12,8 @@ menu_settings:
       url: "/"
     - title: "Blog"
       url: "/blog/"
+    - title: "Library"
+      url: "https://lib.marinovic.dev/"
     - title: "About"
       url: "/about"
     - title: "Contact"
