@@ -29,37 +29,23 @@ You can create helper functions to display the field's value and a select box fo
 ```elixir
 defmodule PlaygroundWeb.EnumHelpers do
   @moduledoc """
-  Conveniences for translating and building enum selects.
+  Conveniences for translations.
   """
-
-  use Phoenix.HTML
-
-  @doc """
-  Translates an enum value using gettext.
-  """
-  def translate_enum(value) when is_atom(value) do
-    value =
-      value
-      |> Atom.to_string()
-      |> humanize()
-
-    Gettext.dgettext(PlaygroundWeb.Gettext, "enums", value)
-  end
 
   @doc """
   Returns all translated enum values for the select options.
   """
-  def translated_select_enums(module, field) do
+  def translated_enum_options(module, field) do
     module
     |> Ecto.Enum.values(field)
     |> Enum.map(fn value -> {translate_enum(value), value} end)
   end
 
   @doc """
-  Generates a select with translated enum options.
+  Translates an enum value using gettext.
   """
-  def select_enum(form, field, module) do
-    select(form, field, translated_select_enums(module, field))
+  def translate_enum(domain \\ "enums", value) do
+    Gettext.dgettext(MirrorDimensionWeb.Gettext, domain, Phoenix.Naming.humanize(value))
   end
 end
 ```
@@ -67,13 +53,12 @@ end
 Make it available to all views on `lib/playground_web.ex`:
 
 ```elixir
-defp view_helpers do
+defp html_helpers do
     quote do
-      use Phoenix.HTML
+      use Gettext, backend: PlaygroundWeb.Gettext
       # ...
-      import PlaygroundWeb.ErrorHelpers
+      import Phoenix.HTML
       import PlaygroundWeb.EnumHelpers
-      import PlaygroundWeb.Gettext
     end
   end
 ```
@@ -109,5 +94,6 @@ On your views, you can use the new select or simply translate the field's value:
 
 ```elixir
 <%= translate_enum(@company.state) %>
-<%= select_enum f, :state, Playground.Business.Company %>
+
+<.input field={@form[:state]} type="select" label="State" options={translated_enum_options(Playground.Business.Company, :state)} />
 ```
