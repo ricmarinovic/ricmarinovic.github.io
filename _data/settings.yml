@@ -16,8 +16,8 @@ menu_settings:
       url: "https://lib.marinovic.dev/"
     - title: "About"
       url: "/about"
-    - title: "Contact"
-      url: "/contact"
+    # - title: "Contact"
+    #   url: "/contact"
 
 footer_settings:
   footer_tagline: Creating software and learning new things.
@@ -36,9 +36,9 @@ contact_settings:
 
 social_settings:
   github_url: "https://github.com/ricmarinovic/"
-  linkedin_url: "https://linkedin.com/in/ricmarinovic"
   stack-overflow_url: "https://stackoverflow.com/users/7186812/ricardo-marinovic"
-  twitter_url: "https://twitter.com/ricmarinovic"
+  linkedin_url: "https://linkedin.com/in/ricmarinovic"
+  twitter_url: ""
   youtube_url: ""
   instagram_url: ""
   reddit_url: ""

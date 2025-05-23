@@ -5,6 +5,7 @@ subtitle: "A web browser card game."
 description: "This project built with Phoenix has the last one with cards winning the game."
 featured_image: "/images/posts/card.jpg"
 tags: elixir
+published: false
 ---
 
 - Developed the game in pure Elixir separating the game logic from the consumer layers.
